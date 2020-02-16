@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 class SearchBar extends Component {
+    
+    state = {
+        searchValue : ""
+    }
+
     render() {
-        this.state = {
-            searchValue : ""
-        }
 
         onChangeHandler = (event) => (this.setState(() => ({ searchValue: event })));
 
