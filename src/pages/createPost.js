@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput, TouchableOpacity, Button } from 'react-native';
+import { View, StyleSheet, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 // import { ImagePicker } from 'react-native-image-picker';
 
 class CreatePost extends Component {
@@ -12,7 +12,7 @@ class CreatePost extends Component {
     onChangeHandler1 = (event) => (this.setState(() => ({ title: event })));
     onChangeHandler2 = (event) => (this.setState(() => ({ details: event })));
     onChangeHandler3 = (event) => (this.setState(() => ({ contact: event })));
-    
+
     onUploadImage = () => {
         // ImagePicker.launchImageLibrary({}, (response) => {
         //     if (response.didCancel) {
@@ -37,11 +37,14 @@ class CreatePost extends Component {
                     onChangeText={this.onChangeHandler1}
                 />
                 <TextInput
+                    placeholder="Enter Case Details"
+                    multiline={true}
+                    numberOfLines={10}
                     value={this.state.details}
                     underlineColorAndroid='rgba(0, 0, 0, 0)'
                     style={styles.input}
-                    placeholder="Enter Case Details"
                     onChangeText={this.onChangeHandler2}
+
                 />
                 <TextInput
                     value={this.state.contact}
@@ -52,10 +55,10 @@ class CreatePost extends Component {
                     onChangeText={this.onChangeHandler3}
                 />
                 <View style={{ flexDirection: "row", marginTop: 20 }}>
-                    <Text>Image (Optional): </Text>
+                    <Image style={{ width: 50, height: 50, marginRight: 30 }} source={require('../image/noimage.png')}></Image>
                     <TouchableOpacity
                         style={styles.uploadButton}
-                    ><Text style={{fontSize: 12}, styles.buttonText}>Upload</Text></TouchableOpacity>
+                    ><Text style={{ fontSize: 12 }, styles.buttonText}>Upload</Text></TouchableOpacity>
                 </View>
                 <TouchableOpacity
                     style={styles.button}
@@ -81,10 +84,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 1.8)',
         marginVertical: 10,
         paddingHorizontal: 16,
-        borderColor: "black",
+        borderColor: "#303331",
         borderRadius: 25,
         fontSize: 16,
-        color: "#ffffff"
+        borderWidth: 1,
+        textAlignVertical: "top"
     },
     button: {
         width: 300,
@@ -101,15 +105,18 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 190,
-        backgroundColor: 'black',
+        backgroundColor: "#263238",
         marginVertical: 40,
         paddingVertical: 12,
         borderRadius: 25,
     },
     uploadButton: {
-        width: 90,
-        backgroundColor: 'black',
+        width: 150,
+        backgroundColor: "#263238",
         paddingVertical: 6,
         borderRadius: 25,
+        paddingTop: 15,
+        height: 'auto'
     },
 });
+

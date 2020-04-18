@@ -23,7 +23,7 @@ class ClientDashBoard extends Component {
                 {
                     name: "Ali",
                     title: "Divorce case",
-                    details: "I want a divorce beacause of ..........."
+                    details: "I want a divorce beacause of daily fight."
                 },
                 {
                     name: "Nouman",
@@ -59,21 +59,22 @@ const styles = StyleSheet.create({
     engine: {
         flex: 1,
         // justifyContent: "center",
-        backgroundColor: "#ffffff",
+        backgroundColor:'white',
         alignItems: 'center'
     },
     postButton: {
         width: 300,
         height: 45,
-        backgroundColor: '#000a12',
+        backgroundColor: "#263238",
         marginVertical: 10,
         padding: 10,
-        borderRadius: 15,
+        borderRadius: 30,
     },
     postButtonText: {
         color: "white",
         justifyContent: "center",
-        textAlign: "center"
+        textAlign: "center",
+        paddingTop : 4
     }
 });
 

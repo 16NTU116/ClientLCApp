@@ -52,6 +52,24 @@ class SideMenu extends Component {
                             >
                                 Create Post
                             </Text>
+                            <Text
+                                style={styles.itemStyle}
+                                onPress={this.navigateToScreen('Categories')}
+                            >
+                                Categories
+                            </Text>
+                            <Text
+                                style={styles.itemStyle}
+                                onPress={this.navigateToScreen('Notification')}
+                            >
+                                Notifications
+                            </Text>
+                            <Text
+                                style={styles.itemStyle}
+                                onPress={this.navigateToScreen('Complaints')}
+                            >
+                                Complaints
+                            </Text>
                         </View>
                     </View>
                 </ScrollView>

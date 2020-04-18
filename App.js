@@ -6,10 +6,14 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 
 import SignInpage from './src/pages/SignInPage';
 import SignupPage from './src/pages/SignupPage';
+
 import ClientDashboardPage from './src/pages/ClientDashboard';
 import EditProfilePage from './src/pages/EditProfile';
 import CreatePostPage from './src/pages/createPost';
 import SideMenu from './src/components/SideMenu';
+import CategoriesPage from './src/pages/categories';
+import NotificationPage from './src/pages/Notification';
+import ComplaintsPage from './src/pages/Complaints';
 
 const appContainer = createStackNavigator({
   SignIn: SignInpage,
@@ -30,6 +34,9 @@ const appContainer2 = createDrawerNavigator({
   Dashboard: ClientDashboardPage,
   EditProfile: EditProfilePage,
   CreatePost: CreatePostPage,
+  Categories: CategoriesPage,
+  Notification: NotificationPage,
+  Complaints: ComplaintsPage,
 },
   {
     contentComponent: SideMenu,

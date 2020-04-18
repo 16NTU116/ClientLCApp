@@ -13,6 +13,7 @@ class SearchBar extends Component {
 
         return (
             <View style={styles.container}>
+                  
                 <TextInput
                     value={this.state.searchValue}
                     underlineColorAndroid='rgba(0, 0, 0, 0)'
@@ -45,16 +46,16 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         paddingHorizontal: 16,
         borderColor: "black",
-        borderRadius: 15,
+        borderRadius: 30,
         borderColor: "black",
         fontSize: 16,
     },
     button: {
         width: 80,
         height: 45,
-        backgroundColor: '#000a12',
+        backgroundColor: "#263238",
         marginVertical: 10,
         padding: 10,
-        borderRadius: 15,
+        borderRadius: 30,
     },
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
 class SearchBar extends Component {
     render() {
@@ -16,7 +16,18 @@ class SearchBar extends Component {
                         style={{ width: 170, height: 190, alignContent: "center" }}
                     />
                 }
+                <View style = {styles.innerView}>
+                <TouchableOpacity>
+                   <Text>Like</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={{
+                   paddingLeft : 10
+               }}>
+                   <Text>Comment</Text>
+               </TouchableOpacity>
             </View>
+            </View>
+           
         )
     }
 }
@@ -25,12 +36,13 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
     container: {
-        flexShrink: 1,
+
         justifyContent: "flex-end",
         borderColor: "black",
         padding: 18,
         borderWidth: 1,
-        marginBottom: 5
+        marginBottom: 5,
+        width :'100%' ,
     },
     name: {
         textAlign: "left",
@@ -46,4 +58,9 @@ const styles = StyleSheet.create({
         textAlign: "left",
         fontSize: 12,
     },
+    innerView :{
+        flexDirection : 'row',
+        marginBottom : -5
+    },
+    
 });

@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: 300,
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        backgroundColor: '#d3dce8',
         marginVertical: 10,
         paddingHorizontal: 16,
         borderColor: "black",
@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
         color: "#ffffff"
     },
     button: {
-        width: 300,
-        backgroundColor: '#000a12',
+        width: 150,
+        backgroundColor: '#d3dce8',
         marginVertical: 10,
         paddingVertical: 12,
         borderRadius: 25,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 16,
         fontWeight: '500',
-        color: "#ffffff",
+        color: "black",
         textAlign: "center"
     }
 
