@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "clientappprototype",
+=======
+  "name": "clientlcapp",
+>>>>>>> 3a00009fd5bd36cf244dada848e54ca8b1dc357f
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,8 +17,13 @@
     "@react-native-community/masked-view": "^0.1.6",
     "axios": "^0.19.2",
     "react": "^16.12.0",
+<<<<<<< HEAD
     "react-native": "^0.62.2",
+=======
+    "react-native": "^0.62.1",
+>>>>>>> 3a00009fd5bd36cf244dada848e54ca8b1dc357f
     "react-native-gesture-handler": "^1.5.6",
+    "react-native-image-picker": "^2.3.1",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.0.0-beta.2",

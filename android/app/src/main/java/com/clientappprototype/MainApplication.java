@@ -9,6 +9,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.imagepicker.ImagePickerPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -25,6 +26,11 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage()); 
+<<<<<<< HEAD
+=======
+          packages.add(new ImagePickerPackage());
+          // packages.add(new ImagePickerPackage(R.style.my_dialog_style));
+>>>>>>> 3a00009fd5bd36cf244dada848e54ca8b1dc357f
           return packages;
         }
 

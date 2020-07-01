@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { View, StyleSheet, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 // import { ImagePicker } from 'react-native-image-picker';
+=======
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+import ImagePicker from 'react-native-image-picker';
+>>>>>>> 3a00009fd5bd36cf244dada848e54ca8b1dc357f
 
 class CreatePost extends Component {
     state = {
@@ -14,18 +19,32 @@ class CreatePost extends Component {
     onChangeHandler3 = (event) => (this.setState(() => ({ contact: event })));
 
     onUploadImage = () => {
-        // ImagePicker.launchImageLibrary({}, (response) => {
-        //     if (response.didCancel) {
-        //         console.log('User cancelled image picker');
-        //     } else if (response.error) {
-        //         console.log('ImagePicker Error: ', response.error);
-        //     } else if (response.customButton) {
-        //         console.log('User tapped custom button: ', response.customButton);
-        //     } else {
-        //         const source = { uri: response.uri }
-        //     }
-        // })
+
+        ImagePicker.showImagePicker({}, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                const source = { uri: response.uri };
+
+                this.setState({
+                    avatarSource: source,
+                });
+            }
+        });
     }
+
+    creaetePost = () => {
+        // ToastAndroid.show("AAAAAAAAAAAAAAAAAAAA", ToastAndroid.SHORT);
+        // this.props.addProfile(this.state.client);
+        this.props.navigation.navigate("Dashboard");
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -58,11 +77,18 @@ class CreatePost extends Component {
                     <Image style={{ width: 50, height: 50, marginRight: 30 }} source={require('../image/noimage.png')}></Image>
                     <TouchableOpacity
                         style={styles.uploadButton}
+<<<<<<< HEAD
                     ><Text style={{ fontSize: 12 }, styles.buttonText}>Upload</Text></TouchableOpacity>
+=======
+                        onPress={this.onUploadImage}
+                    >
+                        <Text style={{ fontSize: 12 }, styles.buttonText}>Upload</Text>
+                    </TouchableOpacity>
+>>>>>>> 3a00009fd5bd36cf244dada848e54ca8b1dc357f
                 </View>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => this.props.onCheckHandler()}
+                    onPress={this.creaetePost}
                 >
                     <Text style={styles.buttonText}>Create Post</Text>
                 </TouchableOpacity>

@@ -15,22 +15,13 @@ import CategoriesPage from './src/pages/categories';
 import NotificationPage from './src/pages/Notification';
 import ComplaintsPage from './src/pages/Complaints';
 
-const appContainer = createStackNavigator({
-  SignIn: SignInpage,
-  Signup: SignupPage,
-},
-  {
-    initialRouteName: "SignIn",
-    headerMode: "none"
-  });
-
-const appContainer2 = createDrawerNavigator({
-  stackApp: {
-    screen: appContainer,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-    }
-  },
+const appContainer = createDrawerNavigator({
+  // stackApp: {
+  //   screen: appContainer,
+  //   navigationOptions: {
+  //     drawerLockMode: 'locked-closed'
+  //   }
+  // },
   Dashboard: ClientDashboardPage,
   EditProfile: EditProfilePage,
   CreatePost: CreatePostPage,
@@ -39,13 +30,25 @@ const appContainer2 = createDrawerNavigator({
   Complaints: ComplaintsPage,
 },
   {
-    contentComponent: SideMenu,
+    contentComponent: (props) => (
+      <SideMenu currentScreen={props.navigation.state.routeName} {...props} />),
     drawerBackgroundColor: "white",
     drawerWidth: 200,
     drawerType: "slide",
     contentOptions: {
-      activeBackgroundColor: "red"
+      activeBackgroundColor: "red",
     }
   });
 
+  const appContainer2 = createStackNavigator({
+    SignIn: SignInpage,
+    Signup: SignupPage,
+    drawerApp : {
+      screen: appContainer
+    }
+  },
+    {
+      initialRouteName: "SignIn",
+      headerMode: "none"
+    });
 export default createAppContainer(appContainer2);
